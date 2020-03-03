@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ParseString {
+    private static ArrayList<Character> setMethodsOfString;
     private static ArrayList<Integer> numOfEllements;
     private static ArrayList<Character> methodsOfString;
 
@@ -11,6 +12,7 @@ public class ParseString {
         int lastChar=0;
         for(int i=0;i<buff.length();i++) {
             char thiss=buff.charAt(i);
+            if(thiss == ' ') i++;
         if(!Character.isDigit(thiss)) {
             methodsOfString.add(thiss);
             lastChar=i;
@@ -23,4 +25,10 @@ public class ParseString {
         }
         }
         }
+        public static ArrayList<Integer> setNumOfEllements(){
+        return numOfEllements;
+    }
+    public static ArrayList<Character> setMethodsOfString(){
+        return methodsOfString;
+    }
 }
