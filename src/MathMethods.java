@@ -8,32 +8,36 @@ public class MathMethods {
         while(!method.isEmpty()){
         for(int i=0;i<method.size();i++){
             if(method.get(i)=='*'){
-                int buff = numbers.get(i)*numbers.get(i-1);
+                int buff = numbers.get(i)*numbers.get(i+1);
+                numbers.remove(i);
+                method.remove(i);
                 numbers.set(i,buff);
-                numbers.remove(i-1);
             }
         }
         for(int i=0;i<method.size();i++){
             if(method.get(i)=='/'){
-                int buff = numbers.get(i)/numbers.get(i-1);
-                numbers.set(i,buff);
-                numbers.remove(i-1);
-            }
+                int buff = numbers.get(i)/numbers.get(i+1);
+                numbers.remove(i);
+                method.remove(i);
+                numbers.set(i,buff);            }
         }
         for(int i=0;i<method.size();i++){
             if(method.get(i)=='+'){
-                int buff = numbers.get(i)+numbers.get(i-1);
+                int buff = numbers.get(i)+numbers.get(i+1);
+                numbers.remove(i);
+                method.remove(i);
                 numbers.set(i,buff);
-                numbers.remove(i-1);
             }
         }
         for(int i=0;i<method.size();i++){
             if(method.get(i)=='-'){
-                int buff = numbers.get(i)-numbers.get(i-1);
+                int buff = numbers.get(i)-numbers.get(i+1);
+                numbers.remove(i);
+                method.remove(i);
                 numbers.set(i,buff);
-                numbers.remove(i-1);
             }
         }
     }
+        System.out.println(numbers);
     }
 }
