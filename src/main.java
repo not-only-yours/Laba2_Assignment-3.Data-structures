@@ -1,6 +1,5 @@
 public class main {
     public static void main(String[] args){
     ParseString.parseString();
-    MathMethods.workWithNumbers();
     }
 }
