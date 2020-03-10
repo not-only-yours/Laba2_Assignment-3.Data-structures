@@ -32,18 +32,20 @@ public class ParseString {
                           do {
                               RPN += stack.peek();
                               stack.pop();
-                          } while (stack.peek() != '+' || stack.peek() != '-' || stack.isEmpty());
+                          } while (stack.peek() != '*' || stack.peek() == '/' || stack.isEmpty());
+                          stack.add(buff.charAt(i));
                       }
+                      stack.add(buff.charAt(i));
                   }
               }
             }
-            System.out.println(buff);
-            System.out.println(stack);
-            System.out.println(RPN);
             do{
                 RPN+=stack.peek();
                 stack.pop();
             }while (!stack.isEmpty());
+            System.out.println(buff);
+            System.out.println(stack);
+            System.out.println(RPN);
         }
     }
 }
