@@ -40,7 +40,7 @@ public class ParseString {
         if(next == '*'||next=='/') return 3;
         else if(next=='+'||next=='-')return 2;
         else if(next=='(') return 1;
-            else if(next==')')return 1;
+            else if(next==')')return -1;
             else return 0;
     }
 
