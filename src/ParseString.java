@@ -11,42 +11,38 @@ public class ParseString {
     public static void parseString(){
         Scanner input = new Scanner(System.in);
                 buff= input.nextLine().replaceAll(" ","");
-                stack.add('0');
-        while(!stack.isEmpty()) {
-            stack.pop();
             for (int i = 0; i < buff.length(); i++) {
-                if(Character.isDigit(buff.charAt(i))){
-                    RPN+=buff.charAt(i);
+            int priority = getToken(buff.charAt(i));
+            if(priority==0)RPN+=buff.charAt(i);
+            if(priority==1)stack.push(buff.charAt(i));
+            if(priority>1){
+                while(!stack.isEmpty()) {
+                    if (getToken(stack.peek()) >= priority) RPN += stack.pop();
+                    else break;
                 }
-                if(stack.isEmpty()&&!Character.isDigit(buff.charAt(i))){
-                    stack.push(buff.charAt(i));
+                stack.push(buff.charAt(i));
                 }
-                if(!stack.isEmpty()) {
-                  if (buff.charAt(i) == '*' || buff.charAt(i) == '/') {
-                      if (stack.peek() == '-' || stack.peek() == '+') {
-                          stack.add(buff.charAt(i));
-                      }
-                  }
-                  if (stack.peek() == '*' || stack.peek() == '/') {
-                      if (buff.charAt(i) == '+' || buff.charAt(i) == '-') {
-                          do {
-                              RPN += stack.peek();
-                              stack.pop();
-                          } while (stack.peek() != '*' || stack.peek() == '/' || stack.isEmpty());
-                          stack.add(buff.charAt(i));
-                      }
-                      stack.add(buff.charAt(i));
-                  }
-              }
-            }
-            do{
-                RPN+=stack.peek();
+            if(priority==-1){
+                while (getToken(stack.peek())!=1){
+                    RPN+=stack.pop();
+                }
                 stack.pop();
-            }while (!stack.isEmpty());
-            System.out.println(buff);
-            System.out.println(stack);
+            }
+            }
+            while (!stack.empty()){
+                RPN+=stack.pop();
+            }
             System.out.println(RPN);
         }
+
+
+    private static int getToken(char next){
+        if(next == '*'||next=='/') return 3;
+        else if(next=='+'||next=='-')return 2;
+        else if(next=='(') return 1;
+            else if(next==')')return 1;
+            else return 0;
     }
+
 }
 
