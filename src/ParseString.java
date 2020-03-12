@@ -28,6 +28,9 @@ public class ParseString {
                 }
                 stack.pop();
             }
+            if(priority==4){
+                RPN+=stack.pop();
+            }
             }
             while (!stack.empty()){
                 RPN+=stack.pop();
@@ -41,6 +44,7 @@ public class ParseString {
         else if(next=='+'||next=='-')return 2;
         else if(next=='(') return 1;
             else if(next==')')return -1;
+            else if(next=='^')return 4;
             else return 0;
     }
 
