@@ -3,7 +3,7 @@ public class Main {
 
         ParseString parse = new ParseString();
 
-        String s = "3 + 4 * 2 / ( 1 - 5 ) ^ 2 ^ 3";
+        String s = "(-2)*(-3)";
 
         parse.infixToPostfix(s);
 

@@ -5,18 +5,6 @@ public class ParseString {
     private static String RPN = new String();
     private static MyStack<Character> stack = new MyStack<>();
 
-    /*public void parse(String s) {
-        MyStack<String> stack = new MyStack<>();
-        for (int i = 0; i < s.length(); i++) {
-            char ch = s.charAt(i);
-            if (ch == ' ')
-                continue;
-            if (getToken(ch) == 0) {
-
-            }
-        }
-    }*/
-
     public static void infixToPostfix(String input) {
         String buff = input.replaceAll(" ","");
         String temp = "";
@@ -32,6 +20,10 @@ public class ParseString {
                     temp += buff.charAt(i);
                 RPN += " " + temp;
                 temp = "";
+            }
+            if (buff.charAt(i) == '-' && (i == 0 || (i > 0 && getToken(buff.charAt(i-1)) >= 1))) {
+                temp += buff.charAt(i);
+                continue;
             }
             if (priority == 1)
                 stack.push(buff.charAt(i));
@@ -70,7 +62,7 @@ public class ParseString {
                 continue;
             }
 
-            if (getToken(ch) == 0) {
+            if (getToken(ch) == 0 || (ch == '-' && (i < RPN.length() - 1) && RPN.charAt(i+1) != ' ')) {
                 temp += ch;
             } else {
                 Double op1 = stack.top();
