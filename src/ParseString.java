@@ -3,7 +3,7 @@ import java.util.Stack;
 
 public class ParseString {
     public static String RPN=new String();
-    public static Stack<Character> stack=new Stack<>();
+    public static MyStack<Character> stack=new MyStack<>();
     public static String buff=new String();
     public static void parseString(){
         Scanner input = new Scanner(System.in);
@@ -29,7 +29,7 @@ public class ParseString {
                 RPN+=stack.pop();
             }
             }
-            while (!stack.empty()){
+            while (!stack.isEmpty()){
                 RPN+=stack.pop();
             }
             System.out.println(RPN);

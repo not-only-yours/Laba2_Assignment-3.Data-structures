@@ -41,6 +41,14 @@ public class MyStack<T> {
         size++;
     }
 
+    public T peek() {
+        if(size == 0 || top.getNext() == null) {
+            throw new java.util.NoSuchElementException();
+        }
+
+        return top.getValue();
+    }
+
     public T top() {
         if(size == 0 || top.getNext() == null) {
             throw new java.util.NoSuchElementException();
@@ -49,13 +57,15 @@ public class MyStack<T> {
         return top.getValue();
     }
 
-    public void pop() {
+    public T pop() {
         if(size == 0 || top.getNext() == null) {
             throw new java.util.NoSuchElementException();
         }
 
+        T topValue = top.getValue();
         top = top.getNext();
         size--;
+        return topValue;
     }
 
     public void clear() {
@@ -65,5 +75,12 @@ public class MyStack<T> {
 
     public int getSize() {
         return size;
+    }
+
+    public boolean isEmpty() {
+        if (size == 0)
+            return true;
+        else
+            return false;
     }
 }
