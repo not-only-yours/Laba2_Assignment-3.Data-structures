@@ -3,11 +3,13 @@ public class Main {
 
         ParseString parse = new ParseString();
 
-        String s = "(-2)*(-3)";
+        String s = "";
+        for (String str : args)
+            s += str;
 
         parse.infixToPostfix(s);
 
-        double adn = parse.getInfix();
-        System.out.println("RESULT: " + adn);
+        double ans = parse.getInfix();
+        System.out.println(ans);
     }
 }

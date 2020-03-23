@@ -48,7 +48,6 @@ public class ParseString {
     }
 
     public double getInfix() {
-        System.out.println(RPN);
         MyStack<Double> stack = new MyStack<>();
         String temp = "";
 
