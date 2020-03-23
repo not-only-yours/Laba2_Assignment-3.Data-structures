@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="89f0df20-a989-4a1c-901c-5174f91592f9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Laba2_Assignment #3.Data structures/MyStack.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Laba2_Assignment #3.Data structures/MyStack.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Laba2_Assignment #3.Data structures/ParseString.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Laba2_Assignment #3.Data structures/ParseString.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ParseString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ParseString.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -111,7 +113,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1583259862878</updated>
-      <workItem from="1584957095719" duration="1239000" />
+      <workItem from="1584957095719" duration="7030000" />
     </task>
     <servers />
   </component>

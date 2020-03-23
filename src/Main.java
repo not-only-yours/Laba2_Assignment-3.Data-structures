@@ -1,11 +1,13 @@
 public class Main {
     public static void main(String[] args){
 
-        MyStack<Integer> stack = new MyStack<Integer>();
-        stack.push(22);
-        //stack.pop();
-        stack.push(33);
+        ParseString parse = new ParseString();
 
-        System.out.print(stack.top());
+        String s = "3 + 4 * 2 / ( 1 - 5 ) ^ 2 ^ 3";
+
+        parse.infixToPostfix(s);
+
+        double adn = parse.getInfix();
+        System.out.println("RESULT: " + adn);
     }
 }
