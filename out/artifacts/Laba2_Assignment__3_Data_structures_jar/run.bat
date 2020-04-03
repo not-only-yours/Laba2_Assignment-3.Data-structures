@@ -1,0 +1,1 @@
+'C:\Program Files\Java\jre1.8.0_231\bin\javaw.exe' -jar file.jar 1+2

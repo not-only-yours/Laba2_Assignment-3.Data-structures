@@ -1,5 +1,5 @@
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         ParseString parse = new ParseString();
 
@@ -7,9 +7,11 @@ public class Main {
         for (String str : args)
             s += str;
 
-        parse.infixToPostfix(s);
+        System.out.println(parse.infixToPostfix(s));
+
+        /*System.out.println(parse.RPN);
 
         double ans = parse.getInfix();
-        System.out.println(ans);
+        System.out.println(ans);*/
     }
 }

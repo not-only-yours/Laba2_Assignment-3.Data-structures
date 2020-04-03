@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Laba2_Assignment #3.Data structures:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Laba2_Assignment__3_Data_structures_jar</output-path>
+    <root id="archive" name="Laba2_Assignment #3.Data structures.jar">
+      <element id="module-output" name="Laba2_Assignment #3.Data structures" />
+    </root>
+  </artifact>
+</component>
